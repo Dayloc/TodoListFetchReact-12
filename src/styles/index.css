@@ -1,11 +1,245 @@
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+/* Estilos generales */
+body {
+    font-family: 'Arial, sans-serif';
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor principal */
+  .container,
+  .usuario-manager,
+  .tareas-usuario {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+  }
+  
+  /* Títulos */
+  h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs */
+  .input-tarea,
+  .input-usuario {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .input-tarea:focus,
+  .input-usuario:focus {
+    border-color: #007bff;
+  }
+  
+  /* Botones */
+  .boton-agregar,
+  .boton-crear,
+  .boton-volver,
+  .boton-eliminar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .boton-agregar {
+    background-color: #28a745;
+  }
+  
+  .boton-agregar:hover {
+    background-color: #218838;
+  }
+  
+  .boton-crear {
+    background-color: #007bff;
+  }
+  
+  .boton-crear:hover {
+    background-color: #0056b3;
+  }
+  
+  .boton-volver {
+    background-color: #6c757d;
+  }
+  
+  .boton-volver:hover {
+    background-color: #5a6268;
+  }
+  
+  .boton-eliminar {
+    background-color: #dc3545;
+    width: auto;
+  }
+  
+  .boton-eliminar:hover {
+    background-color: #c82333;
+  }
+  
+  /* Mensajes */
+  .mensaje-vacio,
+  .mensaje {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+  }
+  
+  /* Lista de tareas */
+  .lista-tareas {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  /* Cada ítem de la lista de tareas */
+  .tarea-item {
+    background-color: #fff3cd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  .tarea-item:hover {
+    background-color: #ffe69c;
+  }
+  
+  /* Botón de eliminar tarea */
+  .tarea-item .boton-eliminar {
+    display: none;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .tarea-item:hover .boton-eliminar {
+    display: inline-block;
+  }
+  
+  /* Lista de usuarios */
+  .lista-usuarios {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  /* Cada ítem de la lista de usuarios */
+  .usuario-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  .usuario-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Estilo para el usuario creado */
+  .usuario-creado {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+  }
+  
+  /* Estilos para el nombre del usuario */
+  .nombre-usuario {
+    cursor: pointer;
+    flex-grow: 1;
+    padding: 10px;
+    transition: color 0.3s;
+  }
+  
+  .nombre-usuario:hover {
+    color: #007bff;
+  }
+  
+  /* Estilos específicos para el componente Home */
+  .text-center {
+    text-align: center;
+  }
+  /* Botón de editar */
+.boton-editar {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+  }
+  
+  .boton-editar:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Botón de guardar */
+  .boton-actualizar {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+  }
+  
+  .boton-actualizar:hover {
+    background-color: #218838;
+  }
+  
+  /* Botón de cancelar */
+  .boton-cancelar {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+  }
+  
+  .boton-cancelar:hover {
+    background-color: #5a6268;
+  }
